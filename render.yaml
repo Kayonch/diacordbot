@@ -1,0 +1,19 @@
+services:
+  - type: worker
+    name: ginox-intern-bot
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot.py
+    envVars:
+      - key: DISCORD_TOKEN
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: OWNER_TAG
+        value: "@ui.kay"
+      - key: VERIFIED_ROLE
+        value: verified
+      - key: GENERAL_CHANNEL_NAME
+        value: general
+      - key: DEAD_CHAT_HOURS
+        value: "6"
